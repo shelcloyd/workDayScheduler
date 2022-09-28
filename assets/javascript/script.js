@@ -1,5 +1,3 @@
-let today = moment();
-$("#currentDay").text(today.format("[Today's date: ]dddd, MMM Do, YYYY, LT"));
 // globals start
 const button1 = document.querySelector("#save1");
 const button2 = document.querySelector("#save2");
@@ -19,11 +17,15 @@ const toDo6 = document.querySelector("#toDo6");
 const toDo7 = document.querySelector("#toDo7");
 const toDo8 = document.querySelector("#toDo8");
 const toDo9 = document.querySelector("#toDo9");
-const time = new Date();
-const timeFormatted = pastPresentFuture(time);
-const timeBlock = document.querySelector(".time");
-const row = document.querySelector(".block")
+const allTableRows = document.querySelectorAll(".block");
+const time = document.querySelector("#currentDay")
 // globals end
+
+// today's date in jumbotron
+setInterval(() => {
+    let now = moment().format("[Today's date: ]dddd, MMM Do, YYYY, LT");
+    time.textContent = now;
+    }, 1000)
 
 // making local storage persist through refresh
 toDo1.value = localStorage.getItem("toDo1")
@@ -94,26 +96,20 @@ button7.addEventListener("click", localStorage7)
 button8.addEventListener("click", localStorage8)
 button9.addEventListener("click", localStorage9)
 
-function pastPresentFuture(dateObject) {
-    const nineAm = new Date().getHours("9:00");
-    const currentTime =
-    {
-        hour: (dateObject.getHours() % 12) || 12,
-        minute: dateObject.getMinutes().toString().padStart(2, "0"),
-        amPm: dateObject.getHours() < 12 ? "AM" : "PM"
-    }
-    console.log(currentTime);
-    console.log(nineAm);
-    if (nineAm < currentTime){
-        row.style.backgroundColor = "grey"
-    } else if (nineAm > currentTime) {
-        row.style.backgroundColor = "white"
+// color coding function
+function pastPresentFuture() {
+    let currentHour = moment().hours();
+
+    for (let i = 0; i < allTableRows.length; i++) {
+        const row = allTableRows[i]
+        const hour = parseInt(row.dataset.hour);
+
+        if (currentHour > hour) {
+            row.style.backgroundColor = "#3f3f3f";
+        } else if (currentHour < hour) {
+            row.style.backgroundColor = "#e4e4e4";
+        }
     }
 }
 
-
-
-
-
-
-
+pastPresentFuture()

@@ -38,9 +38,24 @@
 .toDo {
   width: 100%;
   text-align: center;
+  background-color: transparent;
+  height: 40px;
+  font-size: 30px;
 }
 
 .block {
-  background-color: purple;
+  background-color: #7aff83;
 }
 
+.table-head {
+  background-color: black;
+  color: #ffffff;
+}
+
+.table {
+  border-color: black;
+}
+
+.time {
+  font-size: 25px;
+}
