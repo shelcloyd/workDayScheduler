@@ -4,22 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
@@ -30,9 +18,66 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Event</th>
+            <th scope="col">Save Entry</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="block">
+            <th scope="row" class="time">9:00 AM</th>
+            <td><input type="text" id="toDo1" class="toDo"></td>
+            <td><input type="submit" value="Save" id="save1" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">10:00 AM</th>
+            <td><input type="text" id="toDo2" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save2" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">11:00 AM</th>
+            <td><input type="text" id="toDo3" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save3" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">12:00 PM</th>
+            <td><input type="text" id="toDo4" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save4" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">1:00 PM</th>
+            <td><input type="text" id="toDo5" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save5" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">2:00 PM</th>
+            <td><input type="text" id="toDo6" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save6" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">3:00 PM</th>
+            <td><input type="text" id="toDo7" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save7" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">4:00 PM</th>
+            <td><input type="text" id="toDo8" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save8" class="save"></td>
+          </tr>
+          <tr class="block">
+            <th scope="row" class="time">5:00 PM</th>
+            <td><input type="text" id="toDo9" class="toDo"></td>
+            <td><input type="submit" value="Save"  id="save9" class="save"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
   </body>
 </html>
